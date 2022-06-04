@@ -30,7 +30,7 @@ $TokenResponse = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$tena
 
 #######################GraphAPIで情報取得
 Write-Output $TargetEmp
-$apiUrl = "https://graph.microsoft.com/beta/users/${TargetEmp}@kao.com/photo/$value"
+$apiUrl = "https://graph.microsoft.com/beta/users/${TargetEmp}@kao.com/photos/504x504/`$value"
 # $Data = Invoke-RestMethod -Headers @{Authorization = "Bearer $(Tokenresponse.access_token)"} -Uri $apiUrl -Method Get
 # $Data = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Tokenresponse.access_token)"} -Uri $apiUrl -Method Get -OutFile z:\test01\$targetEmp.jpg
 $Data = Invoke-RestMethod -Headers @{Authorization = "Bearer $($Tokenresponse.access_token)"} -Uri $apiUrl -Method Get -ContentType "image/jpg" -OutFile z:\test01\$targetEmp.jpg
